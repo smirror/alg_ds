@@ -1,0 +1,261 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"str_input": {
+		"prefix": "in",
+		"body": [
+			"input()"
+		],
+		"description": "def input()"
+	},
+	"str_list": {
+		"prefix": "sl",
+		"body": [
+			"input().split()"
+		],
+		"description": "def input().split()-> list(input().split())"
+	},
+	"int_input": {
+		"prefix": "iin",
+		"body": [
+			"int(input())"
+		],
+		"description": "def int(input())"
+	},
+	"map_int": {
+		"prefix": "imap",
+		"body": [
+			"map(int, input().split())"
+		],
+		"description": "def map(int, input().split())"
+	},
+	"list_map_int": {
+		"prefix": "limap",
+		"body": [
+			"list(map(int, input().split()))"
+		],
+		"description": "def list(map(int, input().split()))"
+	},
+	"list_comprehension": {
+		"prefix": "lc",
+		"body": [
+			"[${1:index} for $2 in ${3:array}]\n"
+		],
+		"description": "def [x for index in list]"
+	},
+	"dfs": {
+		"prefix": "dfs",
+		"body": [
+			"def dfs(A : list):",
+			"\tif len(A) == $1:",
+			"\t\t#do something",
+			"\t\t$2",
+			"\t\treturn",
+			"\tfor v in range($3):",
+			"\t\tA.append(v)",
+			"\t\tdfs(A)",
+			"\t\tA.pop()\n"
+		],
+		"description": "def dfs(list)"
+	},
+	"gcd": {
+		"prefix": "gcd",
+		"body": [
+			"def gcd(m, n):",
+			"\twhile n:",
+			"\t\tm, n = n, m % n",
+			"\treturn m"
+		],
+		"description": "gcd"
+	},
+	"lcm": {
+		"prefix": "lcm"
+		"body": [
+			"def gcd(m, n):",
+			"\twhile n:",
+			"\t\tm, n = n, m % n",
+			"\treturn m",
+			"def lcm(m, n):",
+			"\treturn m //gcd(m, n)*n"
+		],
+		"description": "lcm"
+	},
+	"prime factorize": {
+		"prefix": "pf",
+		"body": [
+			"def prime_factorize(N):",
+			"\tres = []",
+			"\tx = N",
+			"\ty = 2",
+			"\twhile y*y <= x:",
+			"\t\twhile x % y == 0:",
+			"\t\t\tres.append(y)",
+			"\t\t\tx //= y",
+			"\t\ty += 1",
+			"\tif x > 1:",
+			"\t\tres.append(x)",
+			"\treturn res"
+		],
+		"description": "prime factorize"
+	},
+	"make_divisors": {
+		"prefix": "divisors",
+		"body": [
+			"def make_divisors(n):",
+			"\tdivisors = []",
+			"\tfor i in range(1, int(n**0.5)+1):",
+			"\t\tif n % i == 0:",
+			"\t\t\tdivisors.append(i)",
+			"\t\t\tif i != n // i:",
+			"\t\t\t\tdivisors.append(n//i)",
+			"\tdivisors.sort()",
+			"\treturn divisors",
+		],
+		"description": "make_divisors"
+	},
+	"Union_Find": {
+		"prefix": "uf",
+		"body": [
+			"class UnionFind:",
+			"\tdef __init__(self, n):",
+			"\t\tself.table = [-1] * n",
+			"\tdef _root(self, x):",
+			"\t\tstack = []",
+			"\t\ttbl = self.table",
+			"\t\twhile tbl[x] >= 0:",
+			"\t\t\tstack.append(x)",
+			"\t\t\tx = tbl[x]",
+			"\t\tfor y in stack:",
+			"\t\t\ttbl[y] = x",
+			"\t\treturn x",
+			"\tdef find(self, x, y):",
+			"\t\treturn self._root(x) == self._root(y)",
+			"\tdef union(self, x, y):",
+			"\t\tr1 = self._root(x)",
+			"\t\tr2 = self._root(y)",
+			"\t\tif r1 == r2:",
+			"\t\t\treturn",
+			"\t\td1 = self.table[r1]",
+			"\t\td2 = self.table[r2]",
+			"\t\tif d1 <= d2:",
+			"\t\t\tself.table[r2] = r1",
+			"\t\t\tself.table[r1] += d2",
+			"\t\telse:",
+			"\t\t\tself.table[r1] = r2",
+			"\t\t\tself.table[r2] += d1",
+			"\tdef roots(self):",
+			"\t\treturn [i for i, x in enumerate(self.table) if x < 0]",
+			"\tdef group_count(self):",
+			"\t\treturn len(self.roots())",
+		],
+		"description": "Union_Find"
+	},
+	"osk_a": {
+		"prefix": "osak",
+		"body": [
+			"from math import sqrt",
+			"def osa_k(M):",
+			"\tp = [i for i in range(M+1)]",
+			"\tfor x in range(2, int(sqrt(M))+1):",
+			"\t\tif p[x] == x:",
+			"\t\t\tfor y in range(2*x, M+1, x):",
+			"\t\t\t\tif p[y] == y:",
+			"\t\t\t\t\tp[y] = x",
+			"\treturn p",
+		],
+		"description": "osa_k method: O(log(n)): fast make a array of minimum prime factor for index numbers. "
+	},
+	"bfs": {
+		"prefix": "bfs",
+		"body": [
+			"from collections import deque",
+			"def bfs(N, G):",
+			"\t# G[v]: 頂点vに隣接する頂点list",
+			"\t# N: 頂点数",
+			"\tdist = [-1]*N",
+			"\tque = deque([0])",
+			"\tdist[0] = 0",
+			"\twhile que:",
+			"\t\tv = que.popleft()",
+			"\t\td = dist[v]",
+			"\t\t# 停止条件",
+			"\t\tif $1:",
+			"\t\t\treturn $2",
+			"\t\tfor w in G[v]:",
+			"\t\t\tif dist[w] > -1:",
+			"\t\t\t\tcontinue",
+			"\t\t\tdist[w] = d + 1",
+			"\t\t\tque.append(w)"
+		],
+		"description": "bfs"
+	},
+	"Sum of Floor of Linear ": {
+		"prefix": "fls",
+		"body": [
+			"def floor_sum(n, m, a, b):",
+			"\tans = n*(b//m)",
+			"\tb %= m",
+			"\twhile True:",
+			"\t\tans += (n-1)*n*(a//m)//2",
+			"\t\ta %= m",
+			"\t\tif a*n+b < m:",
+			"\t\t\treturn ans",
+			"\t\ty_max = (a*n + b)//m",
+			"\t\tb -= y_max*m  # now we have x_max = -(b//a)",
+			"\t\tans += (n + b//a)*y_max",
+			"\t\tb %= a",
+			"\t\tm, a, n = a, m, y_max",
+		],
+		"description": "Sum of Floor of Linear "
+	},
+	"mod_combination": {
+		"prefix": "mcmb",
+		"body": [
+			"def cmb(n, r, p):",
+			"    numerator = 1",
+			"    for i in range(n-r+1, n+1):",
+			"        numerator = numerator*i % p",
+			"    denominator = 1",
+			"    for j in range(1, r+1):",
+			"        denominator = denominator*j % p",
+			"    denominator = pow(denominator, p-2, p)",
+			"    return (numerator * denominator) % p"
+		],
+		"description": "combination"
+	},
+	"combination": {
+		"prefix": "cmb",
+		"body": [
+			"def cmb(n, r):",
+			"    if n - r < r: r = n - r",
+			"    if r == 0: return 1",
+			"    if r == 1: return n",
+			"    numerator = [n - r + k + 1 for k in range(r)]",
+			"    denominator = [k + 1 for k in range(r)]",
+			"    for p in range(2,r+1):",
+			"        pivot = denominator[p - 1]",
+			"        if pivot > 1:",
+			"            offset = (n - r) % p",
+			"            for k in range(p-1,r,p):",
+			"                numerator[k - offset] /= pivot",
+			"                denominator[k] /= pivot",
+			"    result = 1",
+			"    for k in range(r):",
+			"        if numerator[k] > 1:",
+			"            result *= int(numerator[k])",
+			"    return result"
+		],
+		"description": "combination"
+	}
+}
