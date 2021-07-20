@@ -118,7 +118,7 @@ https://twitter.com/kyopro_friends/status/1304063876019793921?s=20
 
 # 参考文献
 ## Python
-1. [Python関連記事まとめ](https://note.nkmk.me/python-post-summary/#docstring)
+1. [Python関連記事まとめ](https://note.nkmk.me/python-post-summary)
    - 日本語で書かれたPython文法記事ではダントツでこれを読むべき。サムライやテックアカデミーを避けたいときはこちらから検索した方が良い
    - Qiitaにも良い記事はたくさんあるが、これだけ網羅的にまとめられているのはこれぐらいと思っています。
 2. [AtCoderで始めるPython入門](https://qiita.com/KoyanagiHitoshi/items/3286fbc65d56dd67737c)
