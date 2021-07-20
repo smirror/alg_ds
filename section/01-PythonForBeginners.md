@@ -77,8 +77,8 @@ https://twitter.com/kyopro_friends/status/1304063876019793921?s=20
 
 結論ですが，桁 DP は以下の方針に従うとほぼ機械的に書け，バグりにくいと思います:
 
--「配る DP」で書く
--「遷移前の状態」「状態遷移」「遷移後の状態」を変数で管理し，遷移前の状態と状態遷移の列挙を全て `for` 文に任せる
+- 「配る DP」で書く
+- 「遷移前の状態」「状態遷移」「遷移後の状態」を変数で管理し，遷移前の状態と状態遷移の列挙を全て `for` 文に任せる
 - `for` 文の中では，まず遷移後の状態を表す変数を遷移前の状態で初期化し，必要に応じて遷移後の状態を書き換える
 - 不要な遷移は `continue` で抜ける
 
@@ -94,8 +94,7 @@ https://twitter.com/kyopro_friends/status/1304063876019793921?s=20
 - [ Digit DP 入門](https://torus711.hatenablog.com/entry/20150423/1429794075)
 
 - [桁DP入門](https://web.archive.org/web/20190103133620/https://pekempey.hatenablog.com/entry/2015/12/09/000603)
-- 
--[ 桁 DP の簡潔な実装](https://opt-cp.com/digit-dp-implementation/)
+- [桁DPの簡潔な実装](https://opt-cp.com/digit-dp-implementation/)
 
 
 
