@@ -1,0 +1,21 @@
+[submodule "libraries/kactl"]
+	path = libraries/kactl
+	url = git@github.com:kth-competitive-programming/kactl.git
+[submodule "libraries/ac-library"]
+	path = libraries/ac-library
+	url = git@github.com:atcoder/ac-library.git
+[submodule "libraries/beet-lib"]
+	path = libraries/beet-lib
+	url = git@github.com:beet-aizu/library.git
+[submodule "libraries/ei1333-lib"]
+	path = libraries/ei1333-lib
+	url = git@github.com:ei1333/library.git
+[submodule "libraries/spaghetti-source"]
+	path = libraries/spaghetti-source
+	url = git@github.com:spaghetti-source/algorithm.git
+[submodule "libraries/noshi91-lib"]
+	path = libraries/noshi91-lib
+	url = git@github.com:noshi91/Library.git
+[submodule "libraries/kyopro_educational_90"]
+	path = libraries/kyopro_educational_90
+	url = git@github.com:E869120/kyopro_educational_90.git
